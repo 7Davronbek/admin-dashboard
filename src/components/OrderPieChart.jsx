@@ -4,6 +4,23 @@ import * as echarts from "echarts";
 
 const OrderPieChart = () => {
   const option = {
+    color: [
+      new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+        {
+          offset: 0,
+          color: "#1158e2",
+        },
+        {
+          offset: 1,
+          color: "#42b5f2",
+        },
+      ]),
+    ],
+    toolbox: {
+      feature: {
+        saveAsImage: {},
+      },
+    },
     series: [
       {
         data: [
@@ -12,29 +29,29 @@ const OrderPieChart = () => {
           { value: 892, name: "Email" },
           { value: 462, name: "Union Ads" },
         ],
-        name: 'Search Item',
-        type: 'pie',
-        radius: ['50%', '80%'],
+        name: "Search Item",
+        type: "pie",
+        radius: ["50%", "80%"],
         avoidLabelOverlap: false,
         itemStyle: {
-            borderRadius: 10,
-            borderColor: '#000',
-            borderWidth: 5,
-            // shadowBlur: 10,
-            shadowOffsetX: 0,
-            shadowColor: 'rgba(255, 255, 255, 0.2)'
+          borderRadius: 10,
+          borderColor: "#000",
+          borderWidth: 5,
+          // shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: "rgba(255, 255, 255, 0.2)",
         },
         label: {
-            show: false,
-            position: 'center',
+          show: false,
+          position: "center",
         },
         emphasis: {
-            label: {
-                show: true ,
-                fontSize: 20,
-                fontWeight: 'bold'
-            }
-        }
+          label: {
+            show: true,
+            fontSize: 20,
+            fontWeight: "bold",
+          },
+        },
       },
     ],
   };
@@ -43,7 +60,7 @@ const OrderPieChart = () => {
     <div className="OrderPieChart py-5">
       <div className="container">
         <div className="row">
-          <div className="col-12">
+          <div className="col-lg-4 mx-auto">
             <ReactECharts option={option} />
           </div>
         </div>
