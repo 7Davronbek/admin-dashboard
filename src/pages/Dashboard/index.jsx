@@ -1,9 +1,12 @@
 import React from "react";
+import Statistics from "../../components/Statistics";
 
 const Dashboard = () => {
-  return <div className="Dashboard">
-
-  </div>;
+  return (
+    <>
+      <Statistics />
+    </>
+  );
 };
 
 export default Dashboard;
