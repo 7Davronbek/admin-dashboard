@@ -4,18 +4,27 @@ import * as echarts from "echarts";
 
 const Statistics = () => {
   const option = {
-    // tooltip: {
-    //     trigger: 'axis',
-    //     axisPointer: {
-    //         type:'shadow'
-    //     }
-    // },
-    // grid: {
-    //     left: '3%',
-    //     right: '4%',
-    //     bottom: '3%',
-    //     containLabel: true
-    // },
+    color: "rgb(235 75 0)",
+    toolbox: {
+      feature: {
+        saveAsImage: {},
+      },
+    },
+    tooltip: {
+      trigger: "axis",
+      axisPointer: {
+        type: "cross",
+      },
+      backgroundColor: "rgba(0, 0, 0, 0.6)",
+      borderWidth: "0px ",
+    },
+    grid: {
+      left: "3%",
+      right: "4%",
+      bottom: "3%",
+      containLabel: true,
+      show: false,
+    },
     xAxis: {
       type: "category",
       boundaryGap: false,
@@ -60,13 +69,16 @@ const Statistics = () => {
         },
       },
     ],
+    emphasis: {
+      focus: "series",
+    },
   };
 
   return (
     <div className="Statistics py-5">
       <div className="container">
         <div className="row">
-          <div className="col-lg-8 mb-4">
+          <div className="col-lg-12 mb-4">
             <ReactECharts option={option} />
           </div>
         </div>
