@@ -1,15 +1,45 @@
 body {
-    background: #000;
-    padding-bottom: 120px;
+  background: #000;
+  padding-bottom: 120px;
 }
 
 .Navbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #000;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.6);
+  border-radius: 70px 70px 0 0;
+}
+
+.BoardPage {
+  [data-rbd-drag-handle-context-id="0"] {
+    border-bottom: 1px solid #838383;
+    padding: 15px 0;
+  }
+
+  .react-kanban-card  {
     width: 100%;
-    z-index: 999;
-    background-color: #000;
-    box-shadow: 0 0 10px rgba(192, 192, 192, 0.6);
-    border-radius: 70px 70px 0 0;
+
+    .react-kanban-card__title {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .react-kanban-column-header {
+    font-size: 22px;
+    color: rebeccapurple;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .react-kanban-column {
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    border-radius: 20px;
+    margin-right: 20px;
+  }
 }
