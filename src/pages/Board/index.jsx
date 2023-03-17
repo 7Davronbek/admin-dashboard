@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Board, {
   moveCard,
   moveColumn,
@@ -7,7 +7,8 @@ import Board, {
 } from "@asseinfo/react-kanban";
 import useBoard from "../../store/Board";
 import { RxCross2 } from "react-icons/rx";
-import {IoMdAdd} from 'react-icons/io'
+import { IoMdAdd } from "react-icons/io";
+import AddCardModal from "../../components/AddCardModal";
 
 const BoardPage = () => {
   const { board, setBoard } = useBoard();
@@ -96,10 +97,18 @@ const BoardPage = () => {
                 </div>
               )}
               renderColumnHeader={(props) => {
+                const [modalOpen, setModalOpen] = useState(false);
                 return (
                   <div className="cards d-flex justify-content-between">
                     <h3>{props.title}</h3>
-                    <IoMdAdd color="black" size={25} title="Add To Card" />
+                    <button onClick={() => setModalOpen(true)} className="btn">
+                      <IoMdAdd color="black" size={25} title="Add To Card" />
+                    </button>
+
+                    <AddCardModal
+                      visible={modalOpen}
+                      onClose={() => setModalOpen(false)}
+                    />
                   </div>
                 );
               }}
