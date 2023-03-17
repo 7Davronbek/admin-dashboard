@@ -8,11 +8,11 @@ const OrderPieChart = () => {
       new echarts.graphic.LinearGradient(0, 0, 0, 1, [
         {
           offset: 0,
-          color: "#1158e2",
+          color: "#5003d4",
         },
         {
           offset: 1,
-          color: "#42b5f2",
+          color: "#6425d0",
         },
       ]),
     ],

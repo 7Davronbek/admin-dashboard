@@ -18,6 +18,7 @@ const Calendar = () => {
     let calendarApi = selectInfo.view.calendar;
 
     calendarApi.unselect();
+    // console.log(calendarApi.currentData.eventStore.defs);
 
     if (title) {
       calendarApi.addEvent({

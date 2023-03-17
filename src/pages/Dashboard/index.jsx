@@ -5,8 +5,8 @@ import OrderPieChart from "../../components/OrderPieChart";
 const Dashboard = () => {
   return (
     <>
-      <Statistics />
       <OrderPieChart />
+      <Statistics />
     </>
   );
 };
