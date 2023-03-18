@@ -98,6 +98,16 @@ const BoardPage = () => {
               )}
               renderColumnHeader={(props) => {
                 const [modalOpen, setModalOpen] = useState(false);
+                const handleAddCard = ({title, description}) => {
+                  const card = {
+                    id: new Date().getTime(),
+                    title,
+                    description,
+                  };
+                  const updateBoard = addCard(board, props, card);
+                  setBoard(updateBoard);
+                  setModalOpen(false);
+                };
                 return (
                   <div className="cards d-flex justify-content-between">
                     <h3>{props.title}</h3>
@@ -108,6 +118,7 @@ const BoardPage = () => {
                     <AddCardModal
                       visible={modalOpen}
                       onClose={() => setModalOpen(false)}
+                      handleAddCard={handleAddCard}
                     />
                   </div>
                 );

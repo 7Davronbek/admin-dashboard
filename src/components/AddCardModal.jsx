@@ -2,19 +2,26 @@ import React, { useState } from "react";
 import Royal from "rodal";
 import "rodal/lib/rodal.css";
 
-const AddCardModal = ({ visible, onClose }) => {
+const AddCardModal = ({ visible, onClose, handleAddCard }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+    handleAddCard({title, description})
+  };
+
   return (
     <Royal visible={visible} onClose={onClose}>
       <h3 className="mb-5">MODAL</h3>
-      <form>
+      <form onSubmit={handleAdd}>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
           placeholder="Card Title"
           className="form-control mb-4"
+          required
         />
         <input
           value={description}
@@ -22,8 +29,13 @@ const AddCardModal = ({ visible, onClose }) => {
           type="text"
           placeholder="Card Details"
           className="form-control mb-4"
+          required
         />
-        <button type="submit" className="btn btn-outline-dark">
+        <button
+          disabled={title === "" && description === ""}
+          type="submit"
+          className="btn btn-outline-dark"
+        >
           Save
         </button>
       </form>
