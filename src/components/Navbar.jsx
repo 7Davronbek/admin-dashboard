@@ -21,6 +21,9 @@ const Navbar = () => {
                 <Link className="ms-4" to="board">
                   Board
                 </Link>
+                <Link className="ms-4" to="user">
+                  User
+                </Link>
               </div>
             </div>
           </div>
